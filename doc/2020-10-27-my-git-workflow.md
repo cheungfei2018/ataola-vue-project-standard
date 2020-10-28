@@ -64,7 +64,9 @@
 
 * 切换分支 `git checkout ataola/feature`
 
+* 与远程建立连接 `git remote add origin https://github.com/cnroadbridge/ataola-vue-project-standard.git`
 
+* 提交到远程 `git push -u origin master`
 
 ## 注意
 
