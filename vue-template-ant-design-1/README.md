@@ -32,3 +32,9 @@ yarn run test:unit
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+## 备注
+
+less-loader高版本会引起less not found的错误。
+

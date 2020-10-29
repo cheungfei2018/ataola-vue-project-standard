@@ -11,6 +11,12 @@ const routes: RouteConfig[] = [
     component: Home,
   },
   {
+    path: '/dev/',
+    redirect: {
+      name: 'Home',
+    },
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting

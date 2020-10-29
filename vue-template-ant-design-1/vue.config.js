@@ -39,11 +39,14 @@ module.exports = {
         modules: {
           localIdentName: '[name]-[local]_[hash:base64:5]'
         },
-        // less: {
-        //   javascriptEnabled: true
-        // },
         localsConvention: 'camelCaseOnly'
-      }
+      },
+      less: {
+        globalVars: {
+          primary: '#fff'
+        },
+        javascriptEnabled: true
+      },
     }
   },
   devServer: {
