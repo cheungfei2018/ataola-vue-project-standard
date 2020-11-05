@@ -392,6 +392,8 @@ const USERINFO = {
 
 #### delete
 
+删除数据
+
 #### patch
 
 ####
