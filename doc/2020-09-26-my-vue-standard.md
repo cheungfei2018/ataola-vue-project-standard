@@ -1,21 +1,20 @@
 # Vue 开发规范
 
-> 养成一个良好的编码规范，不管是审阅代码还是bug调试都很有帮助的。------ 丰臣正一
-
+> 养成一个良好的编码规范，不管是审阅代码还是 bug 调试都很有帮助的。------ 丰臣正一
 
 ## 一、命名
 
-* 语义化明确，通俗易懂，例如ataola集团oa系统， ataola-group-oa
+- 语义化明确，通俗易懂，例如 ataola 集团 oa 系统， ataola-group-oa
 
-* 不推荐使用中文拼音缩写，推荐英文单词组合（中文拼音缩写可读性差）
+- 不推荐使用中文拼音缩写，推荐英文单词组合（中文拼音缩写可读性差）
 
-* 不推荐使用中文命名（避免引发编码问题）
+- 不推荐使用中文命名（避免引发编码问题）
 
-* 不推荐使用阿拉伯数字命名（只允许其出现在地图、图表类场景）
+- 不推荐使用阿拉伯数字命名（只允许其出现在地图、图表类场景）
 
 ### 1.1 项目名
 
-* 项目名采用小写字母，若多个单词中间用“-”连接
+- 项目名采用小写字母，若多个单词中间用“-”连接
 
 ```
 # recommend
@@ -30,9 +29,9 @@ ataola_group_oa
 
 ### 1.2 目录名
 
-* 统一小写字母表示，多个单词中间用“-”连接
+- 统一小写字母表示，多个单词中间用“-”连接
 
-* 绝大部分情况下，名词全称时有复数结构用复数结构表示， 缩写不用
+- 绝大部分情况下，名词全称时有复数结构用复数结构表示， 缩写不用
 
 ```
 src/api: 存放接口文件
@@ -107,11 +106,11 @@ test: 测试目录
 
 ### 1.3 文件名
 
-* js、css、图片文件统一小写字母表示，多个单词中间用“-”连接
+- js、css、图片文件统一小写字母表示，多个单词中间用“-”连接
 
-* 不推荐拼音缩写，要表达语言，通俗易懂
+- 不推荐拼音缩写，要表达语言，通俗易懂
 
-* vue文件单词首字母大写
+- vue 文件单词首字母大写
 
 ```
 # Vue组件命名, 以添加笔记监控任务、笔记监控任务列表、笔记监控任务详情; 添加商品监控任务、商品监控任务列表、笔记监控任务详情为例(重心是监控任务，然后下一级任务的种类，比如笔记的任务、商品的任务， 再下去是行为，比如添加、详情、列表)
@@ -152,82 +151,251 @@ icon-chart-selected.svg
 
 ### 1.4 文件内容
 
-* 缩进使用2个空格（1个tab）
+- 缩进使用 2 个空格（1 个 tab）
 
-#### 1.4.1 js文件
+- 在操作符前后需要加空格，比如`+, -, \*, %, =`等操作符前后都应该存在一个空格
 
-* 别搞拼音缩写，看着脑阔疼，增加阅读成本
+#### 1.4.1 js 文件
 
-* 方法名驼峰，类名单词首字母大写，变量多个单词用"-"，常量用大写。
+- 别搞拼音缩写，看着脑阔疼，增加阅读成本
 
-* 字符串无特别情况一律使用单引号
+- 方法名驼峰，类名单词首字母大写，变量多个单词用"-"，常量用大写。
 
-* 方法名命名， 动词或者动词加名词
+- 字符串无特别情况一律使用单引号
+
+- 方法名命名， 动词或者动词加名词
+
+- 表示状态用形容词
+
+- 表示判断用 `is_xxx`
+
+- 所有名词禁用复数形式
+
+- 尽可能不要使用 new Object()、new Array()等，用字面量{}、[]等代替
+
+- 禁止使用任何 ES 关键字和保留字命名
 
 ```
-# 常量
-BASE_URL = 'http://zhengjiangtao.cn'
+关键字
+break, case, catch, class, const, continue, debugger, default, delete, do, else, export, extends, finally, for, function, if, import, in, instanceof, new, return, super, switch, this, throw, try, typeof, var, void, while, with, yield,
 
-# 变量
+未来保留字：
+enum, implements, interface, let, package, private, protected, public, static, await,
+
+ES1-3中的保留关键字
+abstract, boolean, byte, char, double, final, float, goto, int, long, native, short, synchronized, transient, volatile,
+
+其他
+undefined, null, true, false,
+```
+
+```
+# 常量：
+const BASE_URL = 'http://zhengjiangtao.cn'
+
+# 变量： snake_case， 形容词(可选)+名词或名词词组
 let hangzhou_house = '';
 
-# 类
+# 类：PascalCase
 
 class RouterController {}
 
-# 方法
+# 方法（函数）: camelCase， 常用动词或动词+名词
 
 function getUserInfo() {}
 ```
 
-#### 1.4.2 css文件
+#### 1.4.2 css 文件
 
-* 类名中间用“-”， 比如`.header-logo`
+- 类名中间用“-”， 比如`.header-logo`
 
-* ID名用驼峰制，比如`#loginBox`
+- ID 名用驼峰制，比如`#loginBox`
 
-* 命名语义化要强，可读性要好
+- 命名语义化要强，可读性要好
 
-* 属性能简写就不展开
+- 属性能简写就不展开
 
-* 属性键值对空一格， 且一个属性一行
+- 属性键值对空一格， 且一个属性一行
 
-* 属性顺序建议，宽高、颜色、字体、定位布局、动画
+- 属性顺序建议，宽高、颜色、字体、定位布局、动画
 
+- 一些常用的高频词汇
 
-#### 1.4.3 html文件
+  - 隐藏 hidden
 
-* `<!DOCTYPE html>`声明html文档要加上，而且doctype大写
+  - 边框表格 bordered
 
-* html文档中的属性使用双引号，而不是单引号
+  - 筛选框 filter
 
+  - 分页器 pagination
+
+#### 1.4.3 html 文件
+
+- `<!DOCTYPE html>`声明 html 文档要加上，而且 doctype 大写
+
+- html 文档中的属性使用双引号，而不是单引号
+
+- 所有自定义属性：kebab-case，例如 `data-src=""`
 
 ## 二、格式
 
-### 2.1 JS中的一些格式
+### 2.1 JS 中的一些格式
 
-* 能用解构语法尽量用解构语法
+- 能用解构语法尽量用解构语法
 
-* 能够用es6以及高版本语法尽量用高版本语法
+- 能够用 es6 以及高版本语法尽量用高版本语法
 
-* 注意 对象、方法、判断、循环写法的空格问题
+- 注意 对象、方法、判断、循环写法的空格问题
 
-* 等号用"==="
+- 等号用"==="
 
-* 如果上下文有this需要赋值，用self（that是那个，不推荐）
+- 如果上下文有 this 需要赋值，用 self（that 是那个，不推荐）
 
+- 变量，参数，对象属性，JSON key：所有统一使用 snake_case
 
-### 2.2 vue中的一些格式
+- 原则上倾向于句末加";"
 
-## 三、语法
+- 技巧上倾向于最后一个对象属性值后面加","
+
+- 每行声明都应该带上 let 或 const
+
+- 在小括号前后应该存在空格（函数只应该在后面存在空格）
+
+- 冒号后面应该存在一个空格
+
+- 逗号用于变量声明的分隔或是元素的分隔, 如果逗号不在行结尾，后面需要一个空格，此外，逗号不允许出现在行首
+
+- 在比较操作中，如果是无容忍的场景，尽量使用===代替==, 当判断容忍假值时，可以无需使用===或==，示例：当 foo 是 0、undefined、null、false、''时，!foo 都为真值
+
+- js 中一些高频释意词汇
+
+```
+# DOM 操作相关
+
+add()新增动作
+
+modify()修改动作
+
+erase()删除动作
+
+# AJAX 操作相关
+
+create()提交新增
+
+update()提交修改
+
+query()提交查询
+
+remove()提交删除 禁止使用delete
+```
+
+**相关示例：**
+
+```js
+const APP_NAME = '打工人加油打气系统';
+
+function getTodayWeather(current_date) {}
+
+const USERINFO = {
+  username: 'ataola',
+  age: 24,
+  second_name: 'zjt',
+};
+```
+
+```json
+{
+  "app_name": "打工人加油打气系统"
+}
+```
+
+### 2.2 vue 中的一些格式
+
+- 组件名：kebab-case，例如`<form-item></form-item>`
+
+- v-bind：kebab-case，统一使用缩写:，例如`<form-item :data="username"></form-item>`
+
+- v-on：kebab-case，统一使用缩写@，例如`<form-item @change="handleInput"></form-item>`
+
+## 三、注释
+
+### html
+
+- 注释符内部头尾应该各存在一个空格
+
+```
+<!-- annotation -->
+```
+
+### csss && less && css
+
+- SCSS 和 CSS 无论单行还是多行均可使用`/* */`注释符，注释符内部头尾应该各存在一个空格
+
+- SCSS 单行注释可用（建议使用）//，注释符和内容之间应该存在一个空格
+
+- 如果使用中文注释必须在文件头部添加`@charset "UTF-8"`;，否则会编译出错
+
+### JavaScript
+
+#### 单行
+
+仅可使用//，注释符和内容之间应该存在一个空格, 示例：`let foo = 'foo' // a statement.`
+
+#### 多行
+
+仅可使用如下格式，首行和尾行不应存在注释内容，且尾行以\*\*/结束
+
+```
+/*
+ * This is a block annotation,
+ * more than one line.
+ **/
+```
 
 ## 四、辅助
 
-* 不建议给IDE全局配置，建议单独配置每个项目的格式检查之类的东西（全局配置的意思在这里是有问题你还是坚持你自己的答案，单独配置的意思是有问题如果错误答案站多数哪怕你的答案是对的，你也按照错误的来，但是你保留你的想法）
+- 不建议给 IDE 全局配置，建议单独配置每个项目的格式检查之类的东西（全局配置的意思在这里是有问题你还是坚持你自己的答案，单独配置的意思是有问题如果错误答案站多数哪怕你的答案是对的，你也按照错误的来，但是你保留你的想法）
 
+## 五、总结
 
+### 5.1 常见的几种命名方式
+
+- kebab-case (短横线)
+
+- camelCase (驼峰式)
+
+- snake_case (下划线)
+
+- PascalCase (单词首字母大写)
+
+- ALL_CAPS_SNAKE_CASE (大写下划线)
+
+- COOKIE:SESSION:KEY (大写冒号)
+
+### 5.2 HTTP 相关请求
+
+#### options
+
+预检
+
+#### get
+
+条件查询表格，获取页面数据等（严禁在带有密码域的提交中使用 GET 请求）
+
+#### post
+
+新增内容
+
+#### put
+
+更新页面
+
+#### delete
+
+#### patch
+
+####
 
 ## 参考文献
 
 官方风格指南：https://cn.vuejs.org/v2/style-guide/
-
