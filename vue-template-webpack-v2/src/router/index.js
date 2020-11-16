@@ -32,7 +32,7 @@ const routes = [
       {
         path: '/tool/icon-list',
         name: 'IconList',
-        component: () => import('@/components/common/IconList')
+        component: () => import('@/components/tools/IconList')
       }
     ]
   }

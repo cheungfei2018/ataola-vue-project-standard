@@ -413,7 +413,11 @@ const USERINFO = {
 
 - 路由使用懒加载模式、history模式
 
+- 在声明 prop 的时候，其命名应该始终使用 camelCase，而在模板和 JSX 中应该始终使用 kebab-case
 
+- 在组件上总是必须用 key 配合 v-for，以便维护内部组件及其子树的状态
+
+- 不要把 v-if 和 v-for 同时用在同一个元素上
 
 
 
