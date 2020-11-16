@@ -23,6 +23,18 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: () => import('@/components/business/Login')
+  },
+  {
+    path: '/tool',
+    name: 'Tool',
+    component: () => import('@/pages/tool/Tool'),
+    children: [
+      {
+        path: '/tool/icon-list',
+        name: 'IconList',
+        component: () => import('@/components/common/IconList')
+      }
+    ]
   }
 ];
 
