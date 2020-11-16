@@ -10,6 +10,8 @@
 
 [2020.11.05-http 状态码](./doc/2020-11-05-http-status-code.md)
 
+[2020.11.16-关于npm的一些常用命令](./doc/2020-11-16-npm-common-command.md)
+
 ## 工程搭建模板
 
 - [ x ] vue-template-webpack-v2
